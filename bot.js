@@ -4,7 +4,7 @@ function createBot() {
     const bot = mineflayer.createBot({
         host: 'Cocacola-GNtE.aternos.me', // <--- REEMPLAZA ESTO POR LA IP DE TU SERVER
         port: 63372,                // Puerto predeterminado de Minecraft
-        username: 'Narlinda',    // Nombre genérico del bot/NPC dentro del juego
+        username: 'Raboot_356',    // Nombre genérico del bot/NPC dentro del juego
         version: false              // Autodetecta la versión exacta del servidor (1.8 a 1.21+)
     });
 
@@ -62,3 +62,8 @@ function createBot() {
         console.log(`[NPC] Conexión finalizada por: ${reason}. Reintentando en 25 segundos...`);
         setTimeout(createBot, 25000);
     });
+
+    bot.on('error', (err) => console.log(`[NPC] Error crítico de red detectado: ${err}`));
+}
+
+createBot();
